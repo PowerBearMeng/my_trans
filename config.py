@@ -19,8 +19,8 @@ LOOP_FILES = False        # 是否循环发送
 SEND_RATE_HZ = 10        # 发送频率（Hz）
 
 # GStreamer 缓冲区设置
-SENDER_BUFFER_SIZE_MB = 5                # UDP 发送缓冲区（MB）
-SENDER_QUEUE_MAX_BUFFERS = 10            # 队列最大缓冲包数
+SENDER_BUFFER_SIZE_MB = 1                # UDP 发送缓冲区（MB）
+SENDER_QUEUE_MAX_BUFFERS = 2            # 队列最大缓冲包数
 SENDER_QUEUE_LEAKY = True                # 队列满时是否丢弃旧包
 
 # RTT 测量配置
@@ -28,18 +28,18 @@ RTT_MEASUREMENT_ENABLED = True           # ← 新增：是否启用 RTT 测量
 RTT_FEEDBACK_INTERVAL = 1.0              # ← 新增：反馈间隔（秒
 
 # 统计输出
-SENDER_CSV = './stats/sender_stats/' + time.strftime("%Y%m%d_%H%M%S") + '.csv'
+SENDER_CSV = '../stats/sender_stats/' + time.strftime("%Y%m%d_%H%M%S") + '.csv'
 SENDER_STATS_PRINT_INTERVAL = 5.0        # 统计打印间隔（秒）
 
 # ============= 接收端配置 =============
 # 输出设置
-OUTPUT_FOLDER = './received_pcd'
-RECEIVER_CSV = './stats/receiver_stats/' + time.strftime("_%Y%m%d_%H%M%S") + '.csv'
+OUTPUT_FOLDER = '../received_pcd'
+RECEIVER_CSV = '../stats/receiver_stats/' + time.strftime("_%Y%m%d_%H%M%S") + '.csv'
 
 # GStreamer 缓冲区设置
-RECEIVER_JITTER_BUFFER_LATENCY = 100     # 抖动缓冲延迟（毫秒）
+RECEIVER_JITTER_BUFFER_LATENCY = 50     # 抖动缓冲延迟（毫秒）
 RECEIVER_DROP_ON_LATENCY = True          # 超时是否丢包
-RECEIVER_APPSINK_MAX_BUFFERS = 10        # appsink 最大缓冲
+RECEIVER_APPSINK_MAX_BUFFERS = 2        # appsink 最大缓冲
 
 # 统计输出
 RECEIVER_STATS_PRINT_INTERVAL = 5.0      # 统计打印间隔（秒）

@@ -68,7 +68,11 @@ class GstSenderCore:
             f"queue max-size-buffers={queue_max_buffers} max-size-bytes=0 max-size-time=0 leaky={leaky_mode} ! "
             f"rtpgstpay ! "
             f"udpsink host={self.target_host} port={self.target_port} "
-            f"sync=false buffer-size={buffer_size_bytes}"
+            f"sync=false buffer-size={buffer_size_bytes} "
+            f"async=false "           # ← 非阻塞模式
+            f"enable-last-sample=false "  # ← 不保存最后一个样本
+            f"qos=false "              # ← 禁用 QoS
+            f"max-lateness=-1 "         # ← 无限延迟容忍（实际上会丢包）
         )
         
         if self.verbose:
