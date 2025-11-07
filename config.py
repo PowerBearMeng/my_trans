@@ -20,7 +20,7 @@ SEND_RATE_HZ = 10        # 发送频率（Hz）
 
 # GStreamer 缓冲区设置
 SENDER_BUFFER_SIZE_MB = 1                # UDP 发送缓冲区（MB）
-SENDER_QUEUE_MAX_BUFFERS = 2            # 队列最大缓冲包数
+SENDER_QUEUE_MAX_BUFFERS = 1            # 队列最大缓冲包数
 SENDER_QUEUE_LEAKY = True                # 队列满时是否丢弃旧包
 
 # RTT 测量配置
