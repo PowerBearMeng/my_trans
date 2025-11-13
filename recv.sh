@@ -6,13 +6,13 @@
 
 # cd  /home/mfh/driving/my_trans/gstream
 
+# mm-link ~/driving/data/trace_data/1106/trace/1_1.trace \
+#         ~/driving/data/trace_data/1106/trace/1_1.trace \
+#         --downlink-queue=codel \
+#         --downlink-queue-args="target=100,interval=100,packets=4000" \
+#         -- bash -c "cd ~/driving/my_trans/gstream && /bin/python3 main_receive.py"
+
 mm-link ~/driving/data/trace_data/1106/trace/1_1.trace \
         ~/driving/data/trace_data/1106/trace/1_1.trace \
-        --downlink-queue=codel \
-        --downlink-queue-args="target=100,interval=100,packets=40000" \
         -- bash -c "cd ~/driving/my_trans/gstream && /bin/python3 main_receive.py"
-
-# mm-link ~/driving/data/trace_data/1103/trace/2_1.trace \
-#         ~/driving/data/trace_data/1103/trace/2_1.trace \
-#         -- bash -c "cd ~/driving/my_trans/gstream && /bin/python3 main_receive.py"
 
